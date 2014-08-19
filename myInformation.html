@@ -1,16 +1,27 @@
 <div class="content">
-	<header class="fix">
-		<div class="col-lg-6 title">我的信息</div>
-		<div class="col-lg-6"> 
-			<a class="needtooltip glyphicon glyphicon-folder-close r" data-toggle="tooltip" data-placement="bottom" href="https://github.com/yansm/fromzero/zipball/master" title="Download this project as a .zip file"></a>  
-			<a class="needtooltip glyphicon glyphicon-briefcase pt2 r" data-toggle="tooltip" data-placement="bottom" href="https://github.com/yansm/fromzero/tarball/master"  title="Download this project as a tar.gz file"></a>  
-			<a class="needtooltip glyphicon glyphicon-eye-open pt2 r" data-toggle="tooltip" data-placement="bottom" href="https://github.com/yansm/fromzero/tree/gh-pages"  title="View on github"></a>  
-		</div>
-	</header>
+	<div class="header_box fixed ">
+		<header class="fix ">
+			<div class="col-lg-6 title">我的信息</div>
+			<div class="col-lg-6"> 
+				<a class=" glyphicon glyphicon-plus r append_menu" >
+					<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+						<li role="presentation"><label><input type="checkbox" data-target="panel_baseInfo" checked > 我的信息</label></li>
+						<li role="presentation"><label><input type="checkbox" data-target="panel_education" checked > 学习经历</label></li>
+						<li role="presentation"><label><input type="checkbox" data-target="panel_work" checked > 工作经历</label></li>
+						<li role="presentation"><label><input type="checkbox" data-target="panel_skill" checked > 专业技能</label></li>
+						<li role="presentation"><label><input type="checkbox" data-target="panel_spec" checked > 个人特长</label></li>
+					 </ul>
+				</a>  
+				<a class="needtooltip glyphicon glyphicon-folder-close r" data-toggle="tooltip" data-placement="bottom" href="https://github.com/yansm/fromzero/zipball/master" title="Download this project as a .zip file"></a>  
+				<a class="needtooltip glyphicon glyphicon-briefcase pt2 r" data-toggle="tooltip" data-placement="bottom" href="https://github.com/yansm/fromzero/tarball/master"  title="Download this project as a tar.gz file"></a>  
+				<a class="needtooltip glyphicon glyphicon-eye-open pt2 r" data-toggle="tooltip" data-placement="bottom" href="https://github.com/yansm/fromzero/tree/gh-pages"  title="View on github"></a>  
+			</div>
+		</header>
+	</div>
 	<div class="row">
 		<div class="col-lg-1"></div>
 		<div class="col-lg-10">
-			<div class="panel panel-default panel-information mt20">
+			<div class="panel panel-default panel-information mt60" id="panel_baseInfo" data-distype="left"> 
 				<div class="panel-heading">
 					基本信息
 					<button type="button" class="close"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
@@ -55,7 +66,7 @@
 				</table>
 			</div>
 			
-			<div class="panel panel-default panel-information mt20">
+			<div class="panel panel-default panel-information mt20" id="panel_education" data-distype="normal">
 				<div class="panel-heading">
 					学习经历
 					<button type="button" class="close"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
@@ -74,7 +85,7 @@
 				</table>
 			</div>
 			
-			<div class="panel panel-default panel-information mt20">
+			<div class="panel panel-default panel-information mt20" id="panel_work" data-distype="middle">
 				<div class="panel-heading">
 					工作经历
 					<button type="button" class="close"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
@@ -95,7 +106,7 @@
 				</table>
 			</div>
 			
-			<div class="panel panel-default panel-information mt20">
+			<div class="panel panel-default panel-information mt20" id="panel_skill" data-distype="bottom">
 				<div class="panel-heading">
 					专业技能
 					<button type="button" class="close"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
@@ -108,7 +119,7 @@
 				</table>
 			</div>
 			
-			<div class="panel panel-default panel-information mt20">
+			<div class="panel panel-default panel-information mt20" id="panel_spec" data-distype="top">
 				<div class="panel-heading">
 					个人特长
 					<button type="button" class="close"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
