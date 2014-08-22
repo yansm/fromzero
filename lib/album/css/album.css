@@ -1,0 +1,17 @@
+﻿.my_album .photo_box{padding-top:1px;margin:0 auto;}
+.my_album .photo_box .photo_item{position:relative}
+.my_album .photo_box .photo_item > ul > li{background:#CCC;}
+.my_album .photo_box .photo_item .img_box img{margin:0 auto;display:block;}
+.my_album .photo_area{width:100%;height:100%;overflow:hidden;position:relative;margin:0;}
+.my_album .photo_box ul{width:100%;height:100%;}
+.my_album .photo_toolbar{width:100%;text-align:center;margin:0 auto;position:absolute;bottom:20px;}
+.my_album .photo_toolbar a{display:inline-block;width:30px;height:30px;margin-right:8px;background:url('../img/changNum.png')  no-repeat;cursor:pointer;}
+.my_album .photo_toolbar a:hover,.photo_toolbar .current{background-position:bottom;}
+.my_album .photo_box .description{color:#FFFFFF;font-size:14px;line-height:1.8;padding-bottom:30px;margin:15px 0;}
+.my_album .photo_box .prev,.photo_box .next{height:99px;width:99px;display:block;background:url('../img/down_arrow.png')  bottom no-repeat;position:absolute;cursor:pointer;top:50%;margin-top:-50px;overflow:hidden;
+	transition:all .3s linear;-moz-transition:all .3s linear;-webkit-transition:all .3s linear;-o-transition:all .3s linear;border-radius:100px;-webkit-border-radius:100px;-moz-border-radius:100px;-ms-border-radius:100px;}
+.my_album .photo_box .prev span,.photo_box .next span{background:url('../img/down_arrow_circle_border.png')  no-repeat;display:block;width:99px;height:99px;}
+.my_album .photo_box .prev{left:20px;-moz-transform:rotate(90deg); -webkit-transform:rotate(90deg);}
+.my_album .photo_box .next{right:20px;-moz-transform:rotate(-90deg); -webkit-transform:rotate(-90deg);}
+.my_album .photo_box .prev:hover{background-position:top;left:10px;}
+.my_album .photo_box .next:hover{background-position:top;right:10px;}
