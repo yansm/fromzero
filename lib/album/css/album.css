@@ -9,9 +9,9 @@
 .my_album .photo_toolbar a:hover,.photo_toolbar .current{background-position:bottom;}
 .my_album .photo_box .description{color:#FFFFFF;font-size:14px;line-height:1.8;padding-bottom:30px;margin:15px 0;}
 .my_album .photo_box .prev,.photo_box .next{height:99px;width:99px;display:block;background:url('../img/down_arrow.png')  bottom no-repeat;position:absolute;cursor:pointer;top:50%;margin-top:-50px;overflow:hidden;
-	transition:all .3s linear;-moz-transition:all .3s linear;-webkit-transition:all .3s linear;-o-transition:all .3s linear;border-radius:100px;-webkit-border-radius:100px;-moz-border-radius:100px;-ms-border-radius:100px;}
+	transition:all .3s linear;-moz-transition:all .3s linear;-webkit-transition:all .3s linear;-ms-transition:all .3s linear;-o-transition:all .3s linear;border-radius:100px;-webkit-border-radius:100px;-o-border-radius:100px;-moz-border-radius:100px;-ms-border-radius:100px;}
 .my_album .photo_box .prev span,.photo_box .next span{background:url('../img/down_arrow_circle_border.png')  no-repeat;display:block;width:99px;height:99px;}
-.my_album .photo_box .prev{left:20px;-moz-transform:rotate(90deg); -webkit-transform:rotate(90deg);}
-.my_album .photo_box .next{right:20px;-moz-transform:rotate(-90deg); -webkit-transform:rotate(-90deg);}
+.my_album .photo_box .prev{left:20px;-moz-transform:rotate(90deg); -webkit-transform:rotate(90deg);-o-transform:rotate(90deg);-ms-transform:rotate(90deg);transform:rotate(90deg);}
+.my_album .photo_box .next{right:20px;-moz-transform:rotate(-90deg); -webkit-transform:rotate(-90deg);-o-transform:rotate(-90deg);-ms-transform:rotate(-90deg);transform:rotate(-90deg);}
 .my_album .photo_box .prev:hover{background-position:top;left:10px;}
 .my_album .photo_box .next:hover{background-position:top;right:10px;}
