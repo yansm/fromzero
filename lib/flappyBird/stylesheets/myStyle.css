@@ -1,0 +1,19 @@
+body{background:#CCC;}
+.flappy_box{width:400px;height:600px;margin:0 auto;background:#4EC0CA;overflow:hidden;position:relative;
+	font-family:'Jewel Hill';text-shadow:2px 2px #333,-2px -2px #333,2px -2px #333,-2px 2px #333,2px 0px #333,-2px 0px #333,0px -2px #333,0px 2px #333;color:#FFF;}
+.flappy_earth{width:100%;height:110px;position:absolute;bottom:0px;background:#DED895;border-top:2px solid #78666E;z-index:9;}
+.flappy_pipe_box{width:99999px;height:100%;position:relative;left:0px}
+#index_area{position:absolute;font-size:100px;width:40px;height:40px;left:50%;margin-left:-20px;z-index:8;top:15px;}
+#flappy_bird{height:30px;width:42px;background:url('../images/bird.png') no-repeat;position:absolute;left:50%;margin-left:-90px;top:230px;}
+.flappy_pipe,.flappy_pipe:after{width:45px;background:#81BD00;border:2px solid #78666E;position:absolute;top:-2px;float:left;}
+.flappy_pipe:after{content:"";display:block;position:absolute;height:600px;top:auto;bottom:-710px;left:-2px;}
+.welcome_info{width:100%;text-align:center;position:absolute;top:270px;font-size:50px;}
+.result_info{width:340px;height:300px;position:absolute;text-align:center;top:80px;background:#DED895;left:50%;margin-left:-170px;font-size:50px;border-radius:5px;
+	border:2px solid #78666E;box-shadow:5px 5px 5px 0 rgba(0,0,0,0.6);padding:5px 0;z-index:10;display:none;}
+.result_info .score{font-size:100px;display:block;margin-top:-30px;margin-bottom:-100px;}
+
+
+@font-face { 
+  font-family: Jewel Hill; 
+  src: url('Jewel Hill.ttf'); 
+} 
