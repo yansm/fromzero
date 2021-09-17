@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  </head>
+  <style>
+    .title {
+      font-size: 18px;
+      text-align: center;
+      padding: 10px 0;
+      background: #b77d7d;
+      color: #fff;
+    }
+    body {
+      margin: auto;
+      word-break: break-all;
+    }
+    .group {
+      padding-bottom: 10px;
+    }
+    .group-title {
+      background: #5d7190;
+      padding: 10px 20px;
+      color: #fff;
+    }
+    .item {
+      margin: 10px 14px 0;
+      padding: 0 20px;
+      height: 36px;
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid #ccc;
+    }
+    .item.offer .btn {
+      color: green;
+    }
+    .item.need .btn {
+      color: red;
+    }
+    input {
+      line-height: 30px;
+      width: 100%;
+      border: 1px solid #ccc;
+    }
+    .submit {
+      padding: 10px 0;
+      text-align: center;
+      color: #fff;
+      background: rebeccapurple;
+    }
+  </style>
+  <body>
+    <div class="title">设定集收集汇总啦</div>
+
+  </body>
+  <script type="text/javascript">
+  var infoList = [
+    {
+      title: '哈利和朋友',
+      children: ['哈利波特','赫敏格兰杰','纳威隆巴顿','罗恩韦斯莱','乔治(弗雷德)韦斯莱','德拉科马尔福'],
+    },
+    {
+      title: '被铭记的角色',
+      children: ['西菲勒斯斯内普','小天狼星布莱克','阿不思邓布利多','多比','阿拉斯托穆迪','莱姆斯约翰卢平'],
+    },
+    {
+      title: '反派角色',
+      children: ['伏地魔','贝拉&卢修斯','摄魂怪','小矮星彼得','乌姆里奇','奇洛'],
+    },
+    {
+      title: '霍格沃茨教授',
+      children: ['米勒娃麦格','罗兰达霍奇','费尔奇','弗立维','海格','特里劳妮', '斯普劳特'],
+    },
+    {
+      title: '魔法世界商人',
+      children: ['摩金夫人','古灵阁妖精','禁林商人','猫头鹰邮局老版'],
+    },
+    {
+      title: '幽灵和精灵',
+      children: ['桃金娘','差点没头的尼克','血人巴罗','胖修士','格雷女士','皮皮鬼'],
+    },
+    {
+      title: '新生代巫师',
+      children: ['凯文费雷尔','沃尔','弗雷兄弟','葛骑士','艾薇','特纳','罗宾','佩杰'],
+    },
+    {
+      title: '猫头鹰',
+      children: ['仓枭','褐枭','鸣角枭','鹰枭'],
+    },
+    {
+      title: '海格的伙伴',
+      children: ['格洛普','三头犬','炸尾螺','护树罗锅','挪威脊背龙'],
+    },
+    {
+      title: '禁林居住动物',
+      children: ['费泽伦','巨怪','独角兽','八眼巨蛛'],
+    }
+  ]
+  infoList.forEach(d => {
+    var group = document.createElement('div');
+    group.classList.add('group');
+    var title = document.createElement('div');
+    title.classList.add('group-title');
+    title.innerHTML = d.title;
+    group.appendChild(title);
+    d.children.forEach(t => {
+      var item = document.createElement('div');
+      item.classList.add('item');
+      item.setAttribute('data-name', t);
+      item.innerHTML = t;
+      var btn = document.createElement('div');
+      btn.classList.add('btn');
+      btn.innerText = '默认';
+      item.appendChild(btn);
+      item.addEventListener('click', function() {
+        if (item.classList.contains('need')) {
+          item.classList.remove('need');
+          item.classList.add('offer');
+          btn.innerText = '可提供';
+        } else if (item.classList.contains('offer')) {
+          item.classList.remove('offer');
+          btn.innerText = '默认';
+        } else {
+          item.classList.add('need');
+          btn.innerText = '需要';
+        }
+      })
+      group.appendChild(item);
+    })
+    document.body.appendChild(group);
+  })
+  var input = document.createElement('input');
+  input.setAttribute('placeholder', '输入你的名字');
+  document.body.appendChild(input);
+  var submit = document.createElement('div');
+  submit.classList.add('submit');
+  submit.innerText = '复制并发给龙猫';
+  submit.addEventListener('click', function() {
+    if (!input.value) {
+      alert('请输入名字');
+      return;
+    }
+    var result = {
+      name: input.value,
+      need: [],
+      offer: [],
+    }
+    document.querySelectorAll('.item.need').forEach(t => {
+      result.need.push(t.dataset.name);
+    })
+    document.querySelectorAll('.item.offer').forEach(t => {
+      result.offer.push(t.dataset.name);
+    })
+    var str = window.btoa(encodeURIComponent(JSON.stringify(result)));
+    const aux = document.createElement('input');
+    aux.value = str;
+    document.body.appendChild(aux);
+    aux.select();
+    const ret = document.execCommand('copy');
+    document.body.removeChild(aux);
+    alert('已复制到剪贴板，到微信聊天记录里粘贴给龙猫')
+    var text = document.createElement('div');
+    text.innerText = str;
+    text.style.padding = '10px';
+    document.body.appendChild(text);
+  });
+  document.body.appendChild(submit);
+  </script>
+</html>
